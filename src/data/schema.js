@@ -32,7 +32,7 @@ type RootMutation {
   createPost(
     title: String
     content: String
-    user: Int
+    user: String
   ): GqlPost
 }
 

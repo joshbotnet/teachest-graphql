@@ -19,3 +19,53 @@ References for this project:
 - https://github.com/apollostack/frontpage-server
 - https://github.com/apollostack/graphql-server
 - https://github.com/apollostack/graphql-server-express
+
+GraphQL Schema:
+
+Queries:
+
+```
+query {
+  users {
+    id
+  }
+}
+```
+
+Mutations:
+
+```
+mutation ($firstName: String, $lastName: String) {
+  createUser (firstName: $firstName, lastName: $lastName)  {
+    firstName: firstName,
+    lastName: lastName
+  }
+}
+
+with
+
+{
+  "firstName": "John",
+  "lastName": "Citizen"
+}
+```
+
+```
+mutation ($title: String, $content: String, $user: String) {
+  createPost (title: $title, content: $content, user: $user)  {
+    title: title,
+    content: content,
+    user: user {
+      id
+    }
+  }
+}
+
+with
+
+{
+  "title": "Post 3 title",
+  "content": "Post 3 content",
+  "user": "585d8e0e641fc60c7cf06cbe"
+}
+```

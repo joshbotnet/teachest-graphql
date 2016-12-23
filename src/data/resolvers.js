@@ -24,10 +24,10 @@ const rootResolvers = {
   },
   RootMutation: {
     createUser: (root, args) => {
-      return Users.create(args);
+      return DbUsers.create(args);
     },
     createPost: (root, args) => {
-      return Posts.create(args);
+      return DbPosts.create(args);
     },
   },
 };
